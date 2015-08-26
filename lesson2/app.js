@@ -5,7 +5,8 @@ var app = express();
 
 app.get('/', function (req, res) {
   var q = req.query.q;
-  if (q) return res.end(utility.md5(q));
+  // if (q) return res.end(utility.md5(q));
+  if (q) return res.end(utility.sha1(q));
 
   return res.end('error query q');
 });
